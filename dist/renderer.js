@@ -8,7 +8,6 @@ class render {
         const newHTML = template(res);
         $(".mood-set").append(newHTML)
 
-    
     }
     
 }
