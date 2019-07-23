@@ -7,7 +7,6 @@ class Renderer {
         const template = Handlebars.compile(source);
         const newHTML = template(res);
         $(".mood-set").append(newHTML)
-    
     }
 }
                 $(document).ready(function(){
