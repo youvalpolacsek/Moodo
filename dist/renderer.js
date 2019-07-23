@@ -8,12 +8,10 @@ class Renderer {
         const newHTML = template(res);
         $(".mood-set").append(newHTML)
     }
+
+    
 }
 
 $(document).ready(function () {
-    $('#mood').modal();
-})
-
-$(document).ready(function () {
     $('.carousel').carousel({ padding: 400 })
-})
+  })
