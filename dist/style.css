@@ -5,7 +5,6 @@ body{
 .far{
     color: white;
 }
-
-.divq{
-    justify-items: center
+.space{
+    height: 50px
 }

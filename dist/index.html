@@ -10,33 +10,46 @@
     <title>Moodo!</title>
 </head>
 <body>
-        
+        <script src="../jquery/jquery-3.4.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+
+
+
+
+        <h1 class="center-align" style="color: beige ">the mood tracker</h1>
     <div class="row container" >
-           <div class="col s6 center-align"><i class="far fa-sad-cry" style="font-size: 20em;"></i></div>
-           <div class="col s6 center-align"><i class="far fa-laugh-squint" style="font-size: 20em;"></i></div>
-           <div class="col s6 center-align"><i class="far fa-grin-hearts" style="font-size: 20em;"></i></div>
-           <div class="col s6 center-align"><i class="far fa-flushed" style="font-size: 20em;"></i> </div>
+           <div class="col l6 m6 s12 center-align"><i id="sad" class="far fa-sad-cry modal-trigger" href="#mood" style="font-size: 20em;"></i></div>
+           <div class="col l6 m6 s12 center-align"><i id="happy" class="far fa-laugh-squint modal-trigger" href="#mood" style="font-size: 20em;"></i></div>
+          <div class="space col l12 m12 s12"></div>
+           <div class="col l6 m6 s12 center-align"><i id="love" class="far fa-grin-hearts modal-trigger" href="#mood" style="font-size: 20em;"></i></div>
+           <div class="col l6 m6 s12 center-align"><i id="curious" class="far fa-flushed modal-trigger" href="#mood" style="font-size: 20em;"></i> </div>
         </div>
 
-        <div class="mood-set"></div>
+    
 
+        <div id="mood" class="mood-set row modal">fff</div>
+        
         <script id= "mood-template" type="text/x-handlebars-template">
-                <h1>{{mood}}</h1>
-                <span>{{text}}</span>
-                <a href="{{videoUrl}}"></a>
-                <a href="{{gifUrl}}"></a>
-                <div class="buttons">
-                <i class="far fa-heart save"></i>
+            <h1 class="col l12 m12 s12 center-align" style="font-size:5em">{{mood}}</h1>
+            <span class="col l12 m12 s12">{{text}}</span>
+            <a class="col l7 m7 s7" href="{{videoUrl}}"></a>
+            <a class="col l5 m5 s5"href="{{gifUrl}}"></a>
+            <div class="buttons col l12 m12 s12 modal-footer">
+                <i class="far fa-heart save" style="color: black"></i>
                 <i class="fas fa-undo back"></i>
                  </div>
         </script>
+     
+
+
+
 
 
 
 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="/jquery/jquery-3.4.1.js"></script>
-    <script src="/dist/main.js"></script>
+    <script src="ApiManager.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
