@@ -21,3 +21,4 @@ $('.mood-set').on("click", 'save', function(){
 $('.mood-set').on("click", 'back', function(){
   apiManager.deleteSet()
 })
+

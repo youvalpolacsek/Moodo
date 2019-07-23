@@ -14,3 +14,5 @@ class Renderer {
                   $('#mood').modal();
                  })
             
+                 $(document).ready(function(){
+                    $('.carousel').carousel({shift:400})})
