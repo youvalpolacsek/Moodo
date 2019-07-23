@@ -89,6 +89,30 @@ router.get('/moods/:mood', async function(req, res){
     res.send(moodSet)
 })
 
+//route that saves items that the user choses to save
+router.post('/moods', function(req, res){
+    let data = req.body
+    User.findOne({name: data.username}).exec(async function(err, user){
+        await user[data.moodSet.name].push(data.moodSet)
+        user.save()
+    })
+
+    res.end()
+})
+
+//route that saves items that the user choses to save
+router.delete('/moods', function(req, res){
+    let data = req.body
+    User.findOne({name: data.username}).exec(async function(err, user){
+        let savedMoods = user[data.moodSet.name]
+        for(let index in savedMoods){
+            if(savedMoods[index].gifUrl === data.moodSet.gifURL && savedMoods[index].youtubeUrl === data.moodSet.youtubeUrl && savedMoods[index].quote === data.moodSet.quote){
+                savedMoods.splice(index, 1)
+            }
+        }
+        user.save()
+    })
+    res.end()
+})
 
 module.exports = router
-
