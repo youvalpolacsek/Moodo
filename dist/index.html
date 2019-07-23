@@ -14,18 +14,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     
     
-    
-    
-    <h1 class="center-align" style="color: beige ">the mood tracker</h1>
-    <!-- <div class="row container" >
-        <div class="col l6 m6 s12 center-align"><i id="sad" class="far fa-sad-cry modal-trigger" href="#mood" style="font-size: 20em;"></i></div>
-        <div class="col l6 m6 s12 center-align"><i id="happy" class="far fa-laugh-squint modal-trigger" href="#mood" style="font-size: 20em;"></i></div>
-        <div class="space col l12 m12 s12"></div>
-        <div class="col l6 m6 s12 center-align"><i id="love" class="far fa-grin-hearts modal-trigger" href="#mood" style="font-size: 20em;"></i></div>
-        <div class="col l6 m6 s12 center-align"><i id="curious" class="far fa-flushed modal-trigger" href="#mood" style="font-size: 20em;"></i> </div>
-    </div> -->
-    
-    
+    <div class="row">
+        <div class="col l3"><span id="hamburger" class="fas fa-bars sidenav-trigger material-icons" data-target="slide-out" style="font-size: 3em"></span></div>
+        <div class="col l9"><h1 class="center-align col l9" style="color: beige ">the mood tracker</h1></div>
+    </div>
+
         <div class="carousel center-align">
             <div id="item1" class="carousel-item valign-wrapper" href="#one!"><i id="sad" class="far fa-sad-cry modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
             <div id="item2" class="carousel-item valign-wrapper" href="#two!"><i id="happy" class="far fa-laugh-squint modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
@@ -34,7 +27,7 @@
         </div>
         
 
-        <div id="mood" class="mood-set row modal">the mood set</div>
+        <p id="mood" class="mood-set row modal" style="font-family: Verdana, Geneva, Tahoma, sans-serif">the mood set</p>
         
         <script id= "mood-template" type="text/x-handlebars-template">
             <h1 class="col l12 m12 s12 center-align" style="font-size:5em">{{name}}</h1>
@@ -47,10 +40,16 @@
             </div>
         </script>
         
-        
-        
-        
-        
+        <ul id="slide-out" class="sidenav" style="background-color: #5c6bc0">
+                <li><div class="user-view" style="background-color: #283593">
+                  <div class="background" ></div>
+                  <a href="#name"><h1 class="white-text name" style="font-size: 2em">John Doe</h1></a>
+                </div></li>
+                <li><a class="subheader" style="font-style: italic">Your Zone</a></li>
+                <li><a class="waves-effect" href="#!">Saved Moods</a></li>
+                <li><a class="waves-effect" href="#!">Monthly Data</a></li>
+              </ul>
+                    
         
         
         

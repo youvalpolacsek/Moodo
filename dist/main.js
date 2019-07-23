@@ -20,6 +20,9 @@ $(document).ready(function () {
   $('#mood').modal({onOpenStart: aba});
 })
 
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
 
 
 // $('.mood-set').on("click", 'save', function(){
