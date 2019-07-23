@@ -9,10 +9,14 @@ class ApiManager{
   //   return data
   // }
 
-  getMoodSet(mood){
-    $.get(`/moods/${mood}`, function(data){
-      return data
+  async getMoodSet(mood){
+    let moodSet
+    await $.get(`/moods/${mood}`, function(data){
+      console.log(data)
+      moodSet = data
     })
+    console.log(moodSet)
+    return moodSet
   }
 
   getUserData(name){
