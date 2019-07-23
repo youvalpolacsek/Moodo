@@ -1,7 +1,7 @@
 class Renderer {
-    constructor(){}
- 
-    renderMood = function(res){
+    constructor() { }
+
+    renderMood = function (res) {
         $(".mood-set").empty();
         const source = $(`#mood-template`).html();
         const template = Handlebars.compile(source);
@@ -9,9 +9,11 @@ class Renderer {
         $(".mood-set").append(newHTML)
     }
 }
-                $(document).ready(function(){
-                  $('#mood').modal();
-                 })
-            
-                 $(document).ready(function(){
-                    $('.carousel').carousel({shift:400})})
+
+$(document).ready(function () {
+    $('#mood').modal();
+})
+
+$(document).ready(function () {
+    $('.carousel').carousel({ padding: 400 })
+})

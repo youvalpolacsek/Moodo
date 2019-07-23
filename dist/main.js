@@ -3,19 +3,18 @@ const render = new Renderer()
 const apiManager = new ApiManager()
 
 
+
+apiManager.getMoodSet('sad')
+
 const pageLoad = function(){
   
 }
 
-$('.container').on("click", 'i', function(){
-  let currentID = this.id
-
-
-  render.renderMood()
-
-  // console.log(currentID)
-  // render.renderMood(apiManager.getMoodSet(currentID))
-})
+// $('.container').on("click", 'i', function(){
+//   let currentID = this.id
+//   console.log(currentID)
+//   apiManager.getMoodSet(currentID)
+// })
 
 // $('.mood-set').on("click", 'save', function(){
 //   apiManager.saveSet()
