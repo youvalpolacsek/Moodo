@@ -25,9 +25,12 @@
     "materialize": "^1.0.0",
     "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.6.6",
-    "request": "^2.88.0"
+
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0"
+
   }
 }
