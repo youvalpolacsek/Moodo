@@ -3,10 +3,10 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
     name: String,
-    happy: [String],
-    sad: [String],
-    curious: [String],
-    inLove: [String],
+    happy: [Object],
+    sad: [Object],
+    curious: [Object],
+    inLove: [Object],
 })
 
 const User = mongoose.model("User", userSchema)

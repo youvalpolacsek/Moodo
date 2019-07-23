@@ -4,7 +4,7 @@ const path = require('path')
 const api = require('./server/routes/api')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/userDB', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/moodDB', { useNewUrlParser: true })
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
