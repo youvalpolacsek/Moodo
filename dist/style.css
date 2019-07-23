@@ -12,3 +12,20 @@ body{
 .carousel{
     height: 600px;
 }
+
+#item1{
+    height: 400px;
+    width: 400px;
+}
+#item2{
+    height: 400px;
+    width: 400px;
+}
+#item3{
+    height: 400px;
+    width: 400px;
+}
+#item4{
+    height: 400px;
+    width: 400px;
+}
