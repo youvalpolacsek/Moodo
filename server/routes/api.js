@@ -1,6 +1,6 @@
 const express = require( 'express' )
 const router = express.Router()
-const request = require('request')
+const request = require('request-promise')
 const User = require('../models/User')
 
 //gets a random number in a range we define
@@ -31,7 +31,7 @@ router.get('/user/:userName', function(req, res){
 })
 
 //the route that sends all the request to the api's by the mood param
-router.get('/moods/:mood', function(req, res){
+router.get('/moods/:mood', async function(req, res){
     let mood = req.params.mood
     let moodSet = {}
     let gifTag //cat
@@ -67,21 +67,20 @@ router.get('/moods/:mood', function(req, res){
     let youtubeURL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=40&key=AIzaSyDaZ42wgYwW0XQSAVh0g1KLWHOqdIyYOBQ`
     let quotesURl = `http://api.paperquotes.com/apiv1/quotes?tags=${quotesTagName}&limit=10`
     
-    
-    request(gifURL, function(err, response){
+        
+    await request(gifURL, function(err, response){
         let parsedResponse = JSON.parse(response.body)
         let embedURL = parsedResponse.data.embed_url
         moodSet.gifUrl = embedURL
     })
-
-    request(youtubeURL, function(err, response){
+    
+    await request(youtubeURL, function(err, response){
         let parsedResponse = JSON.parse(response.body)
-        console.log(parsedResponse)
         let embedURLs = parsedResponse.items.map(i => i.snippet.resourceId.videoId)
         moodSet.youtubeUrl = embedURLs[getRandomInt(9)]
     })
-
-    request({url: quotesURl, headers: {Authorization: 'token c895cd7c5e78cb62ba2bcab9b4c45361555f4107'}}, function(err, response){
+    
+    await request({url: quotesURl, headers: {Authorization: 'token c895cd7c5e78cb62ba2bcab9b4c45361555f4107'}}, function(err, response){
         let parsedResponse = JSON.parse(response.body)
         let quotes = parsedResponse.results.map(i => i.quote)
         moodSet.quote = quotes[getRandomInt(9)]
@@ -92,3 +91,4 @@ router.get('/moods/:mood', function(req, res){
 
 
 module.exports = router
+
