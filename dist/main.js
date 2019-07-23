@@ -1,10 +1,11 @@
-const render = new render()
+const render = new Renderer()
+
 const apiManager = new ApiManager()
 
 
-// const pageLoad = function(){
+const pageLoad = function(){
   
-// }
+}
 
 $('.container').on("click", 'i', function(){
   let currentID = this.id
