@@ -1,4 +1,4 @@
-class render {
+class Renderer {
     constructor(){}
  
     renderMood = function(res){
@@ -7,7 +7,9 @@ class render {
         const template = Handlebars.compile(source);
         const newHTML = template(res);
         $(".mood-set").append(newHTML)
-
     }
-    
 }
+                $(document).ready(function(){
+                  $('#mood').modal();
+                 })
+            

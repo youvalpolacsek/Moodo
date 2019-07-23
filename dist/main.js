@@ -8,7 +8,11 @@ const apiManager = new ApiManager()
 
 $('.container').on("click", 'i', function(){
   let currentID = this.id
-  console.log(currentID)
+
+
+  render.renderMood()
+
+  // console.log(currentID)
   // render.renderMood(apiManager.getMoodSet(currentID))
 })
 
