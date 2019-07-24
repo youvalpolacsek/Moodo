@@ -1,26 +1,20 @@
-const renderer = new Renderer()
+const render = new Renderer()
+
 const apiManager = new ApiManager()
 
-const aba = async function(){
-  let currentID = this.id
-  console.log(currentID)
-  let moodSet = {
-    "name": "happy",
-    "gifUrl": "https://giphy.com/embed/3in5HNB71gZvq",
-    "youtubeUrl": "h9nE2spOw_o",
-    "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
-}
-console.log(moodSet)
-  //let moodSet = await apiManager.getMoodSet(currentID)
-   renderer.renderMood(moodSet)
+
+
+apiManager.getMoodSet('sad')
+
+const pageLoad = function(){
+  
 }
 
-
-$(document).ready(function () {
-  $('#mood').modal({onOpenStart: aba});
-})
-
-
+// $('.container').on("click", 'i', function(){
+//   let currentID = this.id
+//   console.log(currentID)
+//   apiManager.getMoodSet(currentID)
+// })
 
 // $('.mood-set').on("click", 'save', function(){
 //   apiManager.saveSet()
