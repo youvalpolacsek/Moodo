@@ -23,7 +23,8 @@ class StatManager {
         return;
       }
     })
-    this.moods.push(moodCount.sad, moodCount.happy, moodCount.inLove, moodCount.curious)
+    this.moods = [moodCount.sad, moodCount.happy, moodCount.inLove, moodCount.curious]
+    console.log(this.moods)
     return this.moods
   }
 
