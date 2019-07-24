@@ -93,10 +93,10 @@ router.get('/moods/:mood', async function(req, res){
 router.post('/moods', function(req, res){
     let data = req.body
     User.findOne({name: data.username}).exec(async function(err, user){
+        data.moodSet.date = String(new Date())
         await user[data.moodSet.name].push(data.moodSet)
         user.save()
     })
-
     res.end()
 })
 
@@ -104,15 +104,17 @@ router.post('/moods', function(req, res){
 router.delete('/moods', function(req, res){
     let data = req.body
     User.findOne({name: data.username}).exec(async function(err, user){
-        let savedMoods = user[data.moodSet.name]
+        let savedMoods = user[data.mood]
         for(let index in savedMoods){
-            if(savedMoods[index].gifUrl === data.moodSet.gifUrl && savedMoods[index].youtubeUrl === data.moodSet.youtubeUrl && savedMoods[index].quote === data.moodSet.quote){
+            if(savedMoods[index].date === data.date){
                 savedMoods.splice(index, 1)
                 user.save()
+                res.end()
             }
         }
+        res.end()
     })
-    res.end()
 })
+
 
 module.exports = router
