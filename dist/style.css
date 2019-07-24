@@ -8,6 +8,10 @@ body{
 
 }
 
+.modal{
+    border-radius: 10px;
+}
+
 #happy{
     color: white;
 
@@ -50,6 +54,11 @@ body{
     width: 400px;
 }
 
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+}
 
 #myModal {
     display: none; /* Hidden by default */
@@ -67,8 +76,24 @@ body{
   /* Modal Content/Box */
   .myModal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; /*15% from the top and centered*/
     padding: 20px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 30%; /* Could be more or less, depending on screen size */
+  }
+
+.header{
+    font-family: 'Monoton', cursive;
+    color: white
+}
+
+  #username{
+      width: 50%
+  }
+
+  .userdiv{
+      background-color: rgb(72, 123, 218);
+      width: 100%
   }
