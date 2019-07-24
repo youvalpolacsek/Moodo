@@ -1,9 +1,10 @@
 class StatManager {
   constructor(){
+    this.username
     this.moods = []
   } 
-  async getStatFromDB(name){
-    let moodsStat = await $.get(`/usermood/${name}`)
+  async getStatFromDB(){
+    let moodsStat = await $.get(`/usermood/${this.username}`)
     let moodCount = {
         sad: 0,
         happy: 0,
@@ -26,4 +27,7 @@ class StatManager {
     console.log(this.moods)
     return this.moods
   } 
+  submitUsername = (name) => this.username = name
 }
+
+
