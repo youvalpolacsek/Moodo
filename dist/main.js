@@ -69,17 +69,3 @@ $(".collapsible").on("click", ".delete", async function(){
   await apiManager.deleteSet(moodToDel)
   userDataTransfer()
 })
-// const submitUserName = () => {
- 
-// }
-
-
-// $('.mood-set').on("click", 'save', function(){
-//   apiManager.saveSet()
-// })
-
-
-
-// $('.mood-set').on("click", 'back', function(){
-//   apiManager.deleteSet()
-// })

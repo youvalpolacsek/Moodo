@@ -117,6 +117,7 @@ router.delete('/moods', function(req, res){
     })
 })
 
+//route that takes data about the mood the user clicks and append it to the counter on the user document on the database
 router.post("/usermood", function(req, res){
     let data = req.body
     User.findOne({name: data.username}).exec(async function(err, user){
@@ -128,6 +129,7 @@ router.post("/usermood", function(req, res){
     res.end()
 })
 
+//route that gets a username parameter and sends back the user counter for statistic
 router.get("/usermood/:username", function(req, res){
     let username = req.params.username
     User.findOne({name: username}).exec(async function(err, user){
