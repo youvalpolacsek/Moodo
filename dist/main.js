@@ -84,17 +84,3 @@ $(".statButton").on("click" , function(){
 })
 
 
-// const submitUserName = () => {
- 
-// }
-
-
-// $('.mood-set').on("click", 'save', function(){
-//   apiManager.saveSet()
-// })
-
-
-
-// $('.mood-set').on("click", 'back', function(){
-//   apiManager.deleteSet()
-// })
