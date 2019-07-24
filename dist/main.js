@@ -2,7 +2,7 @@ const renderer = new Renderer()
 
 const apiManager = new ApiManager()
 
-
+const statManager = new StatManager()
 
 const moodSetGetter = async function(){
   let currentID = this._openingTrigger.id
