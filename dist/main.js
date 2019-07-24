@@ -1,4 +1,4 @@
-const render = new Renderer()
+const renderer = new Renderer()
 
 const apiManager = new ApiManager()
 
