@@ -2,9 +2,29 @@ body{
     background-color: rgb(13, 4, 52)
 }
 
-.far{
+#hamburger{
     color: white;
+    margin: 10px;
+
 }
+
+#happy{
+    color: white;
+
+}
+#sad{
+    color: white;
+
+}
+#curious{
+    color: white;
+
+}
+#inLove{
+    color: white;
+
+}
+
 .space{
     height: 50px
 }
