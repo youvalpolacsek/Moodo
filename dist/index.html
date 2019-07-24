@@ -20,8 +20,8 @@
                 <div class="myModal-content">
                             <center>
                             <h3>User Login</h3>
-                            <input id="userName" type="text" placeholder="username"> 
-                            <button onclick="hide()">submit</button>
+                            <input id="username" type="text" placeholder="username"> 
+                            <button id="submit-button">submit</button>
                             </center>
                         </div>
                 </div>          
@@ -56,7 +56,7 @@
     </div>    
     <!--============ mood body  ================= mood body ==================-->
             
-    <p id="mood" class="mood-set row modal" style="font-family: Verdana, Geneva, Tahoma, sans-serif">the mood set</p>
+    <div id="mood" class="mood-set row modal" style="font-family: Verdana, Geneva, Tahoma, sans-serif">the mood set</div>
                     
     <!--============ saved moods =================== saved moods ===========================-->
 
@@ -93,7 +93,6 @@
         <iframe class="col l5 m5 s5" width="420" height="315" src="{{gifUrl}}"></iframe>
         <div class="buttons col l12 m12 s12 modal-footer">
             <i class="far fa-heart save" style="color: black"></i>
-            <i class="fas fa-undo back"></i>
         </div>
     </script>
 
@@ -103,15 +102,15 @@
             {{#each sad}}
             <div class = "savedMood row modal-content">
             <div class = "row col l12 m12 s12">
-                <h1 class ="col l9 m9 s9 center-align" style="font-size:5em">{{name}}</h1>
-                <p class = "col l3 m3 s3" >{{date}}</p>
+                <h1 class ="col l9 m9 s9 center-align mood-name" style="font-size:5em">{{name}}</h1>
+                <p class = "col l3 m3 s3 date" >{{date}}</p>
             </div>
             <span class="col l12 m12 s12">"{{quote}}"</span>
             <div class = "row">
                 <iframe class="col l7 m7 s7" width="420" height="315" src="https://www.youtube.com/embed/{{youtubeUrl}}"></iframe>
                 <iframe class="col l5 m5 s5" width="420" height="315" src="{{gifUrl}}"></iframe>
             </div>
-                <i class="far fa-trash-alt"></i>
+                <i class="far fa-trash-alt delete"></i>
             </div>
             <div class="divider"></div>
             {{/each}}
@@ -123,15 +122,15 @@
         {{#each happy}}
         <div class = "savedMood row modal-content">
         <div class = "row col l12 m12 s12">
-            <!-- <h1 class ="col l9 m9 s9 center-align" style="font-size:5em">{{name}}</h1> -->
-            <p class = "col l12 m12 s12" >{{date}}</p>
+            <h1 class ="col l9 m9 s9 center-align mood-name" style="font-size:5em">{{name}}</h1> 
+            <p class = "col l12 m12 s12 date" >{{date}}</p>
         </div>
         <span class="col l12 m12 s12">"{{quote}}"</span>
         <div class = "row">
             <iframe class="col l7 m7 s7" width="420" height="315" src="https://www.youtube.com/embed/{{youtubeUrl}}"></iframe>
             <iframe class="col l5 m5 s5" width="420" height="315" src="{{gifUrl}}"></iframe>
         </div>
-            <i class="far fa-trash-alt"></i>
+            <i class="far fa-trash-alt delete"></i>
         </div>
         <div class="divider"></div>
         {{/each}}
@@ -143,15 +142,15 @@
         {{#each inLove}}
         <div class = "savedMood row modal-content">
         <div class = "row col l12 m12 s12">
-            <h1 class ="col l9 m9 s9 center-align" style="font-size:5em">{{name}}</h1>
-            <p class = "col l3 m3 s3" >{{date}}</p>
+            <h1 class ="col l9 m9 s9 center-align mood-name" style="font-size:5em">{{name}}</h1>
+            <p class = "col l3 m3 s3 date" >{{date}}</p>
         </div>
         <span class="col l12 m12 s12">"{{quote}}"</span>
         <div class = "row">
             <iframe class="col l7 m7 s7" width="420" height="315" src="https://www.youtube.com/embed/{{youtubeUrl}}"></iframe>
             <iframe class="col l5 m5 s5" width="420" height="315" src="{{gifUrl}}"></iframe>
         </div>
-            <i class="far fa-trash-alt"></i>
+            <i class="far fa-trash-alt delete"></i>
         </div>
         <div class="divider"></div>
         {{/each}}
@@ -163,15 +162,15 @@
         {{#each curious}}
         <div class = "savedMood row modal-content">
         <div class = "row col l12 m12 s12">
-            <h1 class ="col l9 m9 s9 center-align" style="font-size:5em">{{name}}</h1>
-            <p class = "col l3 m3 s3" >{{date}}</p>
+            <h1 class ="col l9 m9 s9 center-align mood-name" style="font-size:5em">{{name}}</h1>
+            <p class = "col l3 m3 s3 date" >{{date}}</p>
         </div>
         <span class="col l12 m12 s12">"{{quote}}"</span>
         <div class = "row">
             <iframe class="col l7 m7 s7" width="420" height="315" src="https://www.youtube.com/embed/{{youtubeUrl}}"></iframe>
             <iframe class="col l5 m5 s5" width="420" height="315" src="{{gifUrl}}"></iframe>
         </div>
-            <i class="far fa-trash-alt"></i>
+            <i class="far fa-trash-alt delete"></i>
         </div>
         <div class="divider"></div>
         {{/each}}

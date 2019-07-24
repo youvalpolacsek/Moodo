@@ -4,28 +4,28 @@ const apiManager = new ApiManager()
 
 
 
-const aba = async function(){
-  let currentID = this.id
-  console.log(currentID)
+const moodSetGetter = async function(){
+  let currentID = this._openingTrigger.id
   let moodSet = {
     "name": "happy",
     "gifUrl": "https://giphy.com/embed/3in5HNB71gZvq",
     "youtubeUrl": "h9nE2spOw_o",
     "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
 }
-console.log(moodSet)
-  let moodSet = await apiManager.getMoodSet(currentID)
-   renderer.renderMood(moodSet)
+
+  // let moodSet = await apiManager.getMoodSet(currentID)
+  renderer.renderMood(moodSet)
+
 }
 
-let p = async function(){
-  let userData = await apiManager.getUserData('john')
+let userDataTransfer = async function(){
+  let userData = await apiManager.getUserData()
   renderer.renderSavedMoods(userData)
 }
 
 
 $(document).ready(function () {
-  $('#mood').modal({onOpenStart: aba});
+  $('#mood').modal({onOpenStart: moodSetGetter});
 })
 
 $(document).ready(function(){
@@ -40,9 +40,7 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
 });
 
-$('#savedMoods').on("click",function(){
-  p()
-})
+$('#savedMoods').on("click", userDataTransfer)
 
 $(document).ready(function(){
   $('#userModal').modal();
@@ -52,9 +50,30 @@ window.onload = function() {
   $(document).empty()
   myModal.style.display = "block";
 }
-const hide = function(){
-  myModal.style.display = "none";
-}
+
+$("#submit-button").on("click", function(){
+   let userName = $(this).siblings("#username").val()
+   apiManager.userLogin(userName)
+   myModal.style.display = "none";
+})
+
+$(".mood-set").on("click", ".save", function(){
+  let container = $(this).closest(".buttons")
+  container.empty()
+  apiManager.saveSet()
+})
+
+$(".collapsible").on("click", ".delete", async function(){
+  let itBe = $(this).closest(".savedMood")
+  let date = itBe.find(".date").text()
+  let moodName = itBe.find(".mood-name").text()
+  let moodToDel = {mood: moodName, date: date}
+  await apiManager.deleteSet(moodToDel)
+  userDataTransfer()
+})
+// const submitUserName = () => {
+ 
+// }
 
 
 // $('.mood-set').on("click", 'save', function(){
