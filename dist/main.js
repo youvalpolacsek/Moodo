@@ -2,18 +2,18 @@ const renderer = new Renderer()
 const statManager = new StatManager()
 const apiManager = new ApiManager()
 
-
+const statManager = new StatManager()
 
 const moodSetGetter = async function(){
   let currentID = this._openingTrigger.id
-  let moodSet = {
-    "name": "happy",
-    "gifUrl": "https://giphy.com/embed/3in5HNB71gZvq",
-    "youtubeUrl": "h9nE2spOw_o",
-    "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
-}
+//   let moodSet = {
+//     "name": "happy",
+//     "gifUrl": "https://giphy.com/embed/3in5HNB71gZvq",
+//     "youtubeUrl": "h9nE2spOw_o",
+//     "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
+// }
 
-  // let moodSet = await apiManager.getMoodSet(currentID)
+  let moodSet = await apiManager.getMoodSet(currentID)
   renderer.renderMood(moodSet)
 
 }
@@ -58,6 +58,7 @@ $("#submit-button").on("click", function(){
    let userName = $(this).siblings("#username").val()
    if (userName){
    $(".side-bar-name").text(userName) 
+   statManager.submitUsername(userName)
    apiManager.userLogin(userName)
    myModal.style.display = "none";
   }
@@ -79,8 +80,9 @@ $(".collapsible").on("click", ".delete", async function(){
 })
 
 
-$(".statButton").on("click" , function(){
-  renderer.renderStats(statManager.getStatFromDB())
+$(".statButton").on("click" , async function(){
+  let moodData = await statManager.getStatFromDB()
+  renderer.renderStats(moodData)
 })
 
 

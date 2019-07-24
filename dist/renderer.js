@@ -21,7 +21,8 @@ class Renderer {
         this.renderHandlebar(`#savedCurious-template`, res, ".curiousBody")
     }
     
-    renderStats = function (res,moodsData){
+    renderStats = function (moodsData){
+        console.log(moodsData)
         // var ctx = document.getElementById('#monthChart').getContext('2d');
    let ctx = $("#monthChart")
    var myDoughnutChart = new Chart(ctx, {
