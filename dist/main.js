@@ -3,6 +3,7 @@ const statManager = new StatManager()
 const apiManager = new ApiManager()
 
 const moodSetGetter = async function(){
+  $('.mood-set').empty()
   let currentID = this._openingTrigger.id
 //   let moodSet = {
 //     "name": "happy",
