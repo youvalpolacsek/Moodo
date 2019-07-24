@@ -122,7 +122,7 @@ router.post("/usermood", function(req, res){
     let data = req.body
     User.findOne({name: data.username}).exec(async function(err, user){
         delete data.username;
-        data.date = String(new Date())
+        data.date = new Date()
         await user.counter.push(data)
         user.save()
     })
