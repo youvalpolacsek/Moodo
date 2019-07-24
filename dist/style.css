@@ -8,9 +8,23 @@ body{
 
 }
 
-.far{
+#happy{
     color: white;
+
 }
+#sad{
+    color: white;
+
+}
+#curious{
+    color: white;
+
+}
+#inLove{
+    color: white;
+
+}
+
 .space{
     height: 50px
 }
