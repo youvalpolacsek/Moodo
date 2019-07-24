@@ -26,6 +26,7 @@ router.post('/user', function(req, res){
 router.get('/user/:userName', function(req, res){
     let userName = req.params.userName
     User.findOne({name: userName}).exec(function(err, user){
+        console.log(user)
         res.send(user)
     })
 })

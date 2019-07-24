@@ -1,4 +1,4 @@
-const render = new Renderer()
+const renderer = new Renderer()
 
 const apiManager = new ApiManager()
 
@@ -18,6 +18,11 @@ console.log(moodSet)
    renderer.renderMood(moodSet)
 }
 
+let p = async function(){
+  let userData = await apiManager.getUserData('john')
+  renderer.renderSavedMoods(userData)
+}
+
 
 $(document).ready(function () {
   $('#mood').modal({onOpenStart: aba});
@@ -34,6 +39,22 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.collapsible').collapsible();
 });
+
+$('#savedMoods').on("click",function(){
+  p()
+})
+
+$(document).ready(function(){
+  $('#userModal').modal();
+});
+
+window.onload = function() {
+  $(document).empty()
+  myModal.style.display = "block";
+}
+const hide = function(){
+  myModal.style.display = "none";
+}
 
 
 // $('.mood-set').on("click", 'save', function(){
