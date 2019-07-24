@@ -1,5 +1,5 @@
 const renderer = new Renderer()
-
+const statManager = new StatManager()
 const apiManager = new ApiManager()
 
 

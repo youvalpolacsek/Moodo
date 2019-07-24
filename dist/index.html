@@ -18,13 +18,15 @@
     <!--============ user login ==================== user login =====================-->
     <div id="myModal" class="modal">
         
-        <div class="myModal-content">
-            <div class = "userdiv">
+        <div class="myModal-content row"> 
                             <center>
+                            <div class = "userdiv modal-header">
                             <h5>User Login</h5></div>
-                            <input id="username" type="text" placeholder="username"> 
-                            <button id="submit-button">submit</button>
+                            <div>
+                                <input class = "col l12 m12 s12" id="username" type="text" placeholder="    username"> 
+                                <button class = "col l12 m12 s12 center-align" id="submit-button">submit</button>
                             </center>
+                            </div>
                         </div>
                 </div>          
 
@@ -37,16 +39,16 @@
     </div>
 
         <div class="carousel center-align">
-            <div id="item1" class="carousel-item valign-wrapper" href="#one!"><i id="sad" class="far fa-sad-cry modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
-            <div id="item2" class="carousel-item valign-wrapper" href="#two!"><i id="happy" class="far fa-laugh-squint modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
-            <div id="item3" class="carousel-item valign-wrapper" href="#three!"><i id="inLove" class="far fa-grin-hearts modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
-            <div id="item4" class="carousel-item valign-wrapper" href="#four!"><i id="curious" class="far fa-flushed modal-trigger" href="#mood" style="font-size: 30em;"></i> </div>
+            <div id="item1" class="carousel-item valign-wrapper" href="#one!"><i id="sad" class="emoji far fa-sad-cry modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
+            <div id="item2" class="carousel-item valign-wrapper" href="#two!"><i id="happy" class="emoji far fa-laugh-squint modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
+            <div id="item3" class="carousel-item valign-wrapper" href="#three!"><i id="inLove" class="emoji far fa-grin-hearts modal-trigger" href="#mood" style="font-size: 30em;"></i></div>
+            <div id="item4" class="carousel-item valign-wrapper" href="#four!"><i id="curious" class="emoji far fa-flushed modal-trigger" href="#mood" style="font-size: 30em;"></i> </div>
         </div>
         
     <!--========== side bar ========================= side bar ===========================-->
         
-        <ul id="slide-out" class="sidenav" style="background-color: #5c6bc0">
-            <li><div class="user-view" style="background-color: #283593">
+        <ul id="slide-out" class="sidenav" style="background-color: #6A687A">
+            <li><div class="user-view" style="background-color: #305252">
                 <div class="background" ></div>
                 <a href="#name"><h1 class="white-text side-bar-name" style="font-size: 2em"></h1></a>
                 </div>
@@ -115,12 +117,12 @@
 <!--=========== moods-template =========== moods-template =========== moods-template =========-->
 
     <script id= "mood-template" type="text/x-handlebars-template">
-        <h1 class="col l12 m12 s12 center-align" style="font-size:5em">{{name}}</h1>
-        <span class="col l12 m12 s12">"{{quote}}"</span>
+        <h1 class="col l12 m12 s12 center-align" style="color:rgb(190, 206, 240); background-color:#364156;padding-bottom: 2%; font-size:3em">{{name}}</h1>
+        <span class="col l12 m12 s12" style="background-color:  2A628F">"{{quote}}"</span>
         <iframe class="col l7 m7 s7" width="420" height="315" src="https://www.youtube.com/embed/{{youtubeUrl}}"></iframe>
         <iframe class="col l5 m5 s5" width="420" height="315" src="{{gifUrl}}"></iframe>
-        <div class="buttons col l12 m12 s12 modal-footer">
-            <i class="far fa-heart save" style="color: black"></i>
+        <div class="buttons col l12 m12 s12 modal-footer" style="background-color:#364156 ">
+            <i class="far fa-heart save" style="color: black; font-size: 2em; margin-right: 5%; margin-top: 1%"></i>
         </div>
     </script>
 
@@ -211,6 +213,7 @@
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="statManager.js"></script>
         <script src="ApiManager.js"></script>
         <script src="renderer.js"></script>
         <script src="main.js"></script>

@@ -7,6 +7,10 @@ body{
     margin: 10px;
 
 }
+.emoji:active{
+    box-shadow: 0 0px #666;
+    transform: translateY(20px)
+}
 
 .modal{
     border-radius: 10px;
@@ -75,25 +79,56 @@ canvas {
   
   /* Modal Content/Box */
   .myModal-content {
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
     margin: 15% auto; /*15% from the top and centered*/
     padding: 20px;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     border: 1px solid #888;
+    background-color:#326771;
     width: 30%; /* Could be more or less, depending on screen size */
   }
 
+.modal-footer{
+    border-radius: 10px;
+    width: 100%
+}
+
 .header{
     font-family: 'Monoton', cursive;
-    color: white
+    color: white;
+    font-size: 5em;
 }
 
   #username{
-      width: 50%
+      width: 100%;
+      border-radius: 50px;
+      background-color: white;
   }
 
-  .userdiv{
+  /* .userdiv{
       background-color: rgb(72, 123, 218);
-      width: 100%
+      width: 100% */
+  /* } */
+
+  #mood{
+      background-color:#8A8D91
   }
+
+#submit-button{
+    border-radius: 8px;
+    width: 50%;
+    margin-left: 25%;
+    background-color: darkgray
+}
+
+
+#submit-button:hover{
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#hamburger:active{
+        /* background-color: #3e8e41; */
+        box-shadow: 0 0px #666;
+        transform: translateY(4px)
+}
