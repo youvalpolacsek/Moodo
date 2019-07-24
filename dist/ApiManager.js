@@ -15,10 +15,9 @@ class ApiManager{
     let moodSet
     await $.get(`/moods/${mood}`, function(data){
       moodSet = data
-      this.userMoodSet = moodSet
     })
     // test if 'this.userMoodSet = moodSet' works
-    return moodSet
+    return this.userMoodSet = moodSet
   }
 
   async getUserData(){
@@ -27,7 +26,8 @@ class ApiManager{
   }
 
   saveSet(){
-    let userDataToSave = {username: this.username, moodSet: this.userMoodSet}
+    let userDataToSave = this.userMoodSet
+    userDataToSave.username = this.username
     $.post('/moods', userDataToSave)
   }
 

@@ -16,7 +16,6 @@ class Renderer {
     }
 
     renderSavedMoods = function (res){
-        console.log(res)
         this.renderHandlebar(`#savedSad-template`, res, ".sadBody")
         this.renderHandlebar(`#savedHappy-template`, res, ".happyBody")
         this.renderHandlebar(`#savedInLove-template`, res, ".inLoveBody")

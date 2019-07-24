@@ -10,7 +10,7 @@ const getRandomInt = (max, min=0) => (Math.floor(Math.random() * max) + min)
 router.post('/user', function(req, res){
     let userName = req.body
     User.findOne({name: userName.name}).exec(function(err, user){
-        if(user[0]){
+        if(user){
             res.send(user)
         }
         else{
@@ -93,8 +93,9 @@ router.get('/moods/:mood', async function(req, res){
 router.post('/moods', function(req, res){
     let data = req.body
     User.findOne({name: data.username}).exec(async function(err, user){
-        data.moodSet.date = String(new Date())
-        await user[data.moodSet.name].push(data.moodSet)
+        delete data.username;
+        data.date = String(new Date())
+        await user[data.name].push(data)
         user.save()
     })
     res.end()
