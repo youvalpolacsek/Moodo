@@ -106,11 +106,11 @@ router.delete('/moods', function(req, res){
     User.findOne({name: data.username}).exec(async function(err, user){
         let savedMoods = user[data.moodSet.name]
         for(let index in savedMoods){
-            if(savedMoods[index].gifUrl === data.moodSet.gifURL && savedMoods[index].youtubeUrl === data.moodSet.youtubeUrl && savedMoods[index].quote === data.moodSet.quote){
+            if(savedMoods[index].gifUrl === data.moodSet.gifUrl && savedMoods[index].youtubeUrl === data.moodSet.youtubeUrl && savedMoods[index].quote === data.moodSet.quote){
                 savedMoods.splice(index, 1)
+                user.save()
             }
         }
-        user.save()
     })
     res.end()
 })
