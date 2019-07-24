@@ -12,8 +12,10 @@ const moodSetGetter = async function(){
     "youtubeUrl": "h9nE2spOw_o",
     "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
 }
+
   // let moodSet = await apiManager.getMoodSet(currentID)
   renderer.renderMood(moodSet)
+
 }
 
 let userDataTransfer = async function(){
