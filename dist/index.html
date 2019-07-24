@@ -5,21 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script src="https://kit.fontawesome.com/77b18202ad.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="style.css">
         <title>Moodo!</title>
     </head>
     <body>
+        <script src="./chart.js/dist/Chart.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     
     <!--============ user login ==================== user login =====================-->
-
-            <div id="myModal" class="modal">
-
-                <div class="myModal-content">
+    <div id="myModal" class="modal">
+        
+        <div class="myModal-content">
+            <div class = "userdiv">
                             <center>
-                            <h3>User Login</h3>
+                            <h5>User Login</h5></div>
                             <input id="username" type="text" placeholder="username"> 
                             <button id="submit-button">submit</button>
                             </center>
@@ -31,7 +33,7 @@
     <div class="mainPageAndBar">
     <div class="row">
         <div class="col l3"><span id="hamburger" class="fas fa-bars sidenav-trigger material-icons" data-target="slide-out" style="font-size: 3em"></span></div>
-        <div class="col l9"><h1 class="center-align col l9" style="color: beige ">the mood tracker</h1></div>
+        <div class="col l9"><h1 class=" header center-align col l9">Moodo</h1></div>
     </div>
 
         <div class="carousel center-align">
@@ -46,12 +48,12 @@
         <ul id="slide-out" class="sidenav" style="background-color: #5c6bc0">
             <li><div class="user-view" style="background-color: #283593">
                 <div class="background" ></div>
-                <a href="#name"><h1 class="white-text name" style="font-size: 2em">John Doe</h1></a>
+                <a href="#name"><h1 class="white-text side-bar-name" style="font-size: 2em"></h1></a>
                 </div>
             </li>
             <li><a class="subheader" style="font-style: italic">Your Zone</a></li>
             <li><a id = "savedMoods" class="waves-effect modal-trigger" href="#savedModal">Saved Moods</a></li>
-            <li><a class="waves-effect" href="#!">Monthly Data</a></li>
+            <li><a class="waves-effect modal-trigger statButton" href="#statModal">Statistics</a></li>
         </ul>  
     </div>    
     <!--============ mood body  ================= mood body ==================-->
@@ -61,6 +63,9 @@
     <!--============ saved moods =================== saved moods ===========================-->
 
     <div id = "savedModal" class = "savedMoods modal">
+        <center>
+        <h2>Your Saved Sets</h2>
+      </center>
     <ul class="collapsible">
             <li>
             <div class="collapsible-header"><i class="far fa-sad-cry"></i>Sad</div>
@@ -80,6 +85,29 @@
             <li>
             <div class="collapsible-header"><i class="far fa-flushed"></i>Curious</div>
             <div class="collapsible-body curiousBody"></div>
+            </li>
+    </ul>        
+    </div>
+
+<!--=========== stat-template =========== stat-template =========== stat-template =========-->
+
+<div id = "statModal" class = "stat modal">
+        <center>
+        <h2>Your Stats</h2>
+      </center>
+    <ul class="collapsible">
+            <li>
+            <div class="collapsible-header"><i class="fas fa-chart-pie"></i>monthly</div>
+            <div class="collapsible-body monthBody">
+                    <canvas id="monthChart" width="400" height="250"></canvas>
+            </div> 
+            </li>
+
+            <li>
+            <div class="collapsible-header"><i class="fas fa-signal"></i>daily</div>
+            <div class="collapsible-body dailyBody">
+                    <canvas id="dayChart" width="400" height="250"></canvas>
+            </div>
             </li>
     </ul>        
     </div>

@@ -23,7 +23,6 @@ let userDataTransfer = async function(){
   renderer.renderSavedMoods(userData)
 }
 
-
 $(document).ready(function () {
   $('#mood').modal({onOpenStart: moodSetGetter});
 })
@@ -40,6 +39,10 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
 });
 
+$(document).ready(function(){
+  $('#statModal').modal();
+});
+
 $('#savedMoods').on("click", userDataTransfer)
 
 $(document).ready(function(){
@@ -53,8 +56,11 @@ window.onload = function() {
 
 $("#submit-button").on("click", function(){
    let userName = $(this).siblings("#username").val()
+   if (userName){
+   $(".side-bar-name").text(userName) 
    apiManager.userLogin(userName)
    myModal.style.display = "none";
+  }
 })
 
 $(".mood-set").on("click", ".save", function(){
@@ -71,6 +77,13 @@ $(".collapsible").on("click", ".delete", async function(){
   await apiManager.deleteSet(moodToDel)
   userDataTransfer()
 })
+
+
+$(".statButton").on("click" , function(){
+  renderer.renderStats()
+})
+
+
 // const submitUserName = () => {
  
 // }
