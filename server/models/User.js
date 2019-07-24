@@ -7,6 +7,7 @@ const userSchema = new Schema({
     sad: [Object],
     curious: [Object],
     inLove: [Object],
+    date: String
 })
 
 const User = mongoose.model("User", userSchema)
