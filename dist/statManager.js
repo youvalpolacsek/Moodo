@@ -24,10 +24,12 @@ class StatManager {
       }
     })
     this.moods.push(moodCount.sad, moodCount.happy, moodCount.inLove, moodCount.curious)
-    console.log(this.moods)
     return this.moods
-  } 
+  }
+
   submitUsername = (name) => this.username = name
+
+  
 }
 
 
