@@ -22,7 +22,38 @@ class Renderer {
         this.renderHandlebar(`#savedCurious-template`, res, ".curiousBody")
     }
     
+    renderStats = function (res){
+        // var ctx = document.getElementById('#monthChart').getContext('2d');
+   let ctx = $("#monthChart")
+   var myDoughnutChart = new Chart(ctx, {
+   type: 'doughnut',
+   data: {
+       labels: ["Happy","Sad","inLove","Curious"],
+       datasets: [{
+           label: 'My First dataset',
+           backgroundColor: [
+                              'rgb(255, 99, 132)',
+                              'rgba(255, 99, 1)',
+                              'rgba(54, 162, 235)',
+                              'rgba(255, 206, 86)'
+           ],
+           data: [10, 5, 2, 0]
+       }]
+   },
+
+ //   // Configuration options go here
+   options: {
+     responsive: false
+ }
+})
+
+    }
 }
+
+
+
+
+
 
 $(document).ready(function () {
     $('.carousel').carousel({ padding: 400 })
