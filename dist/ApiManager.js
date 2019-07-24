@@ -23,8 +23,10 @@ class ApiManager{
     return moodSet
   }
 
-  getUserData(name){
-    $.get(`/user/${name}`, data => data)
+  async getUserData(name){
+    let userData = await $.get(`/user/${name}`)
+    console.log(userData)
+    return userData
   }
 
   saveSet(){

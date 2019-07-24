@@ -15,11 +15,12 @@ class Renderer {
         this.renderHandlebar(`#mood-template`,res,".mood-set")
     }
 
-    renderSavedMoods = function (){
-        this.renderHandlebar(`#savedSad-template`,res,".sadBody")
-        this.renderHandlebar(`#savedHappy-template`,res,".happyBody")
-        this.renderHandlebar(`#savedInLove-template`,res,".inLoveBody")
-        this.renderHandlebar(`#savedCurious-template`,res,".curiousBody")
+    renderSavedMoods = function (res){
+        console.log(res)
+        this.renderHandlebar(`#savedSad-template`, res, ".sadBody")
+        this.renderHandlebar(`#savedHappy-template`, res, ".happyBody")
+        this.renderHandlebar(`#savedInLove-template`, res, ".inLoveBody")
+        this.renderHandlebar(`#savedCurious-template`, res, ".curiousBody")
     }
     
 }
