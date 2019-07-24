@@ -14,7 +14,7 @@ const aba = async function(){
     "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
 }
 console.log(moodSet)
-  //let moodSet = await apiManager.getMoodSet(currentID)
+  let moodSet = await apiManager.getMoodSet(currentID)
    renderer.renderMood(moodSet)
 }
 
