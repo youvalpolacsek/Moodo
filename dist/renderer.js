@@ -22,7 +22,7 @@ class Renderer {
         this.renderHandlebar(`#savedCurious-template`, res, ".curiousBody")
     }
     
-    renderStats = function (res){
+    renderStats = function (res,moodsData){
         // var ctx = document.getElementById('#monthChart').getContext('2d');
    let ctx = $("#monthChart")
    var myDoughnutChart = new Chart(ctx, {
@@ -37,7 +37,7 @@ class Renderer {
                               'rgba(54, 162, 235)',
                               'rgba(255, 206, 86)'
            ],
-           data: [10, 5, 2, 0]
+           data: moodsData
        }]
    },
 

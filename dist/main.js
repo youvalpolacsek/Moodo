@@ -80,7 +80,7 @@ $(".collapsible").on("click", ".delete", async function(){
 
 
 $(".statButton").on("click" , function(){
-  renderer.renderStats()
+  renderer.renderStats(statManager.getStatFromDB())
 })
 
 
