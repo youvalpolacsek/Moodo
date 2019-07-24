@@ -12,6 +12,7 @@ class Renderer {
 
 
     renderMood = function (res) {
+        $(".mood-set").empty()
         this.renderHandlebar(`#mood-template`,res,".mood-set")
     }
         renderSavedMoods = function (res){
@@ -22,8 +23,7 @@ class Renderer {
     }
     
     renderStats = function (moodsData){
-        console.log(moodsData)
-        // var ctx = document.getElementById('#monthChart').getContext('2d');
+    $("#monthChart").empty()      
    let ctx = $("#monthChart")
    var myDoughnutChart = new Chart(ctx, {
    type: 'doughnut',
@@ -40,14 +40,11 @@ class Renderer {
            data: moodsData
        }]
    },
-
- //   // Configuration options go here
    options: {
      responsive: false
  }
 })
-
-    }
+}
 }
 
 
