@@ -1,38 +1,44 @@
 class ApiManager{
   
   constructor(){
-    this.moodSet = []
+    this.userMoodSet 
+    this.username
   }
   
-  // userLogin(name){
-  //   let data = await $.post(`/user`, username)
-  //   return data
-  // }
+   async userLogin(name){
+    let data = await $.post(`/user`, name)
+    this.username = data.name
+    return data
+  }
 
   async getMoodSet(mood){
     let moodSet
     await $.get(`/moods/${mood}`, function(data){
       console.log(data)
       moodSet = data
+      this.userMoodSet = moodSet
     })
-    console.log(moodSet)
+    // test if 'this.userMoodSet = moodSet' works
+    console.log(this.userMoodSet)
     return moodSet
   }
 
   getUserData(name){
-    $.get(`/user/${name}`, function(data){
-      return data
-    })
+    $.get(`/user/${name}`, data => data)
   }
 
-  // saveSet(){
-  //   $.post(',moods', )
-  // }
+  saveSet(){
+    let userDataToSave = {username: this.username, moodSet: this.userMoodSet}
+    $.post('/moods', userDataToSave)
+  }
 
-  // deleteSet(){
-  //   $.ajax({
-  //     url: `/moods/`,
-  //     type: 'DELETE',
-  //   })
-  // }
+  deleteSet(moodToDel){
+    moodToDel.username = this.username
+    $.ajax({
+      url: '/moods',
+      data: moodToDel,
+      type: 'DELETE',
+      success: () => console.log(`delete ${moodToDel.mood}`)  
+    })
+  }
 }

@@ -21,7 +21,6 @@ $(document).ready(function () {
 })
 
 
-
 // $('.mood-set').on("click", 'save', function(){
 //   apiManager.saveSet()
 // })
