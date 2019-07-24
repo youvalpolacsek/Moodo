@@ -7,7 +7,8 @@ const userSchema = new Schema({
     sad: [Object],
     curious: [Object],
     inLove: [Object],
-    date: String
+    date: String,
+    counter: [Object]
 })
 
 const User = mongoose.model("User", userSchema)

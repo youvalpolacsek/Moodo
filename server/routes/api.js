@@ -117,5 +117,22 @@ router.delete('/moods', function(req, res){
     })
 })
 
+router.post("/usermood", function(req, res){
+    let data = req.body
+    User.findOne({name: data.username}).exec(async function(err, user){
+        delete data.username;
+        data.date = String(new Date())
+        await user.counter.push(data)
+        user.save()
+    })
+    res.end()
+})
+
+router.get("/usermood/:username", function(req, res){
+    let username = req.params.username
+    User.findOne({name: username}).exec(async function(err, user){
+        res.send(user.counter)   
+    })
+})
 
 module.exports = router
