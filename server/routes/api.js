@@ -9,7 +9,7 @@ const getRandomInt = (max, min=0) => (Math.floor(Math.random() * max) + min)
 //route that gets a username from the client, checks if it is in database, if not create on, returns the user object from the db
 router.post('/user', function(req, res){
     let userName = req.body
-    User.find({name: userName.name}).exec(function(err, user){
+    User.findOne({name: userName.name}).exec(function(err, user){
         if(user[0]){
             res.send(user)
         }
@@ -26,7 +26,6 @@ router.post('/user', function(req, res){
 router.get('/user/:userName', function(req, res){
     let userName = req.params.userName
     User.findOne({name: userName}).exec(function(err, user){
-        console.log(user)
         res.send(user)
     })
 })

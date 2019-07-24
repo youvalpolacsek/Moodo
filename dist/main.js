@@ -6,20 +6,18 @@ const apiManager = new ApiManager()
 
 const aba = async function(){
   let currentID = this.id
-  console.log(currentID)
   let moodSet = {
     "name": "happy",
     "gifUrl": "https://giphy.com/embed/3in5HNB71gZvq",
     "youtubeUrl": "h9nE2spOw_o",
     "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
 }
-console.log(moodSet)
   //let moodSet = await apiManager.getMoodSet(currentID)
    renderer.renderMood(moodSet)
 }
 
-let p = async function(){
-  let userData = await apiManager.getUserData('john')
+let userDataTransfer = async function(){
+  let userData = await apiManager.getUserData()
   renderer.renderSavedMoods(userData)
 }
 
@@ -40,9 +38,7 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
 });
 
-$('#savedMoods').on("click",function(){
-  p()
-})
+$('#savedMoods').on("click", userDataTransfer)
 
 $(document).ready(function(){
   $('#userModal').modal();
@@ -52,9 +48,16 @@ window.onload = function() {
   $(document).empty()
   myModal.style.display = "block";
 }
-const hide = function(){
-  myModal.style.display = "none";
-}
+
+$("#submit-button").on("click", function(){
+   let userName = $(this).siblings("#username").val()
+   console.log(userName)
+   apiManager.userLogin(userName)
+   myModal.style.display = "none";
+})
+// const submitUserName = () => {
+ 
+// }
 
 
 // $('.mood-set').on("click", 'save', function(){

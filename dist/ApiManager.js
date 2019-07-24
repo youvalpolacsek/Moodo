@@ -6,7 +6,7 @@ class ApiManager{
   }
   
    async userLogin(name){
-    let data = await $.post(`/user`, name)
+    let data = await $.post(`/user`, {name: name})
     this.username = data.name
     return data
   }
@@ -14,18 +14,15 @@ class ApiManager{
   async getMoodSet(mood){
     let moodSet
     await $.get(`/moods/${mood}`, function(data){
-      console.log(data)
       moodSet = data
       this.userMoodSet = moodSet
     })
     // test if 'this.userMoodSet = moodSet' works
-    console.log(this.userMoodSet)
     return moodSet
   }
 
-  async getUserData(name){
-    let userData = await $.get(`/user/${name}`)
-    console.log(userData)
+  async getUserData(){
+    let userData = await $.get(`/user/${this.username}`)
     return userData
   }
 
