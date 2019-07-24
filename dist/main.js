@@ -6,15 +6,18 @@ const apiManager = new ApiManager()
 
 apiManager.getMoodSet('sad')
 
-const pageLoad = function(){
-  
-}
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
 
-// $('.container').on("click", 'i', function(){
-//   let currentID = this.id
-//   console.log(currentID)
-//   apiManager.getMoodSet(currentID)
-// })
+$(document).ready(function(){
+  $('#savedModal').modal();
+});
+
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
+
 
 // $('.mood-set').on("click", 'save', function(){
 //   apiManager.saveSet()
