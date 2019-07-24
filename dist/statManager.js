@@ -1,17 +1,18 @@
 class StatManager {
   constructor(){
+    this.username
     this.moods = []
   } 
-  async getStatFromDB(name){
-    // let moodsStat = await $.get(`/usermood/${name}`)
-    this.moods.forEach(mood => {
-      let moodCount = {
+  async getStatFromDB(){
+    let moodsStat = await $.get(`/usermood/${this.username}`)
+    let moodCount = {
         sad: 0,
         happy: 0,
         inLove: 0,
         curious:0
       }
-      switch(mood.name){
+    moodsStat.forEach(mood => {
+      switch(mood.mood){
         case('sad'): moodCount.sad++
         return;
         case('happy'): moodCount.happy++
@@ -23,8 +24,10 @@ class StatManager {
       }
     })
     this.moods.push(moodCount.sad, moodCount.happy, moodCount.inLove, moodCount.curious)
+    console.log(this.moods)
     return this.moods
   } 
+  submitUsername = (name) => this.username = name
 }
 
 
