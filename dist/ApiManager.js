@@ -18,11 +18,8 @@ class ApiManager{
       moodSet = data
       this.userMoodSet = moodSet
     })
-    console.log(moodSet)
-
     // test if 'this.userMoodSet = moodSet' works
     console.log(this.userMoodSet)
-    
     return moodSet
   }
 
@@ -35,10 +32,13 @@ class ApiManager{
     $.post('/moods', userDataToSave)
   }
 
-  deleteSet(){
+  deleteSet(moodToDel){
+    moodToDel.username = this.username
     $.ajax({
-      url: '/',
+      url: '/moods',
+      data: moodToDel,
       type: 'DELETE',
-      success: result =>  
-  })
+      success: () => console.log(`delete ${moodToDel.mood}`)  
+    })
+  }
 }
