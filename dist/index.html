@@ -35,7 +35,7 @@
     <div class="mainPageAndBar">
     <div class="row">
         <div class="col l3"><span id="hamburger" class="fas fa-bars sidenav-trigger material-icons" data-target="slide-out" style="font-size: 3em"></span></div>
-        <div class="col l9"><h1 class=" header center-align col l9">Moodo</h1></div>
+        <div class="col l9"><h1 class=" header center-align col l9" style="padding-right: 10%">Moodo</h1></div>
     </div>
 
         <div class="carousel center-align">
@@ -47,7 +47,7 @@
         
     <!--========== side bar ========================= side bar ===========================-->
         
-        <ul id="slide-out" class="sidenav" style="background-color: #6A687A">
+        <ul id="slide-out" class="sidenav" style="background-color: #d1ccc0">
             <li><div class="user-view" style="background-color: #305252">
                 <div class="background" ></div>
                 <a href="#name"><h1 class="white-text side-bar-name" style="font-size: 2em"></h1></a>
@@ -56,8 +56,22 @@
             <li><a class="subheader" style="font-style: italic">Your Zone</a></li>
             <li><a id = "savedMoods" class="waves-effect modal-trigger" href="#savedModal">Saved Moods</a></li>
             <li><a class="waves-effect modal-trigger statButton" href="#statModal">Statistics</a></li>
+            <li><a class="waves-effect modal-trigger aboutButton" href="#about">about us</a></li>
         </ul>  
     </div>    
+    <!--============ about body  ================= about body ==================-->
+
+    <div id="about" class ="modal">
+        <div class = "modal-header center-align" style="font-family: Arial, Helvetica, sans-serif ; font-size: 3em">about us</div>
+        <div class= "modal-content">
+                Moodo is a leading global mood improvement and preservation engine site, a place where people can improve their mood when they are sad and preserve positive mood.
+                We are unbiased and free, which means that the 60 million people who use us every month can trust our comprehensive range of playlists, gifs and quotes set.
+                Our secret is in our unique proprietary technology that connects people directly to everything the moods industry has to offer.
+                "We’re a high-growth business with a simple aim: making people feel better!"
+                Founded in 2019, we employ over 3 staff members, with offices in Tel-Aviv , Ramat-Gan and Givat'taim. Moodo is part of the Elevation group.
+        </div>
+    </div>
+
     <!--============ mood body  ================= mood body ==================-->
             
     <div id="mood" class="mood-set row modal" style="font-family: Verdana, Geneva, Tahoma, sans-serif">the mood set</div>
@@ -118,7 +132,9 @@
 
     <script id= "mood-template" type="text/x-handlebars-template">
         <h1 class="col l12 m12 s12 center-align" style="color:rgb(190, 206, 240); background-color:#364156;padding-bottom: 2%; font-size:3em">{{name}}</h1>
-        <span class="col l12 m12 s12" style="background-color:  2A628F; font-family: cursive ">"{{quote}}"</span>
+
+        <span class="col l12 m12 s12 center-align" style="color: cornsilk; font-size: 1.5em; font-family: cursive">"{{quote}}"</span>
+
         <iframe class="col l7 m7 s7" width="420" height="315" src="https://www.youtube.com/embed/{{youtubeUrl}}"></iframe>
         <iframe class="col l5 m5 s5" width="420" height="315" src="{{gifUrl}}"></iframe>
         <div class="buttons col l12 m12 s12 modal-footer" style="background-color:#364156 ">

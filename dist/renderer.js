@@ -41,7 +41,20 @@ class Renderer {
        }]
    },
    options: {
-     responsive: false
+     responsive: false,
+     legend: {
+        position: "bottom",
+        labels: {  
+        fontColor: 'black',
+        fontStyle: 'bold'
+    }
+      },
+      title: {
+        display: true,
+        text: "Total Clicks on Emotions",
+        fontSize: 24, 
+        fontColor: 'black'
+      }
  }
 })
 
@@ -84,7 +97,38 @@ data: {
   ]
 },
 options: {
- responsive: false
+ responsive: false,
+ legend: {
+    position: "bottom",
+    labels: {  
+        fontColor: 'black',
+        fontStyle: 'bold'
+    }
+  },
+  title: {
+    display: true,
+    text: "Emotion Tracker By Time of Day",
+    fontSize: 24, 
+    fontColor: 'black'
+  },
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true,
+        fontColor: 'black'
+      },
+      scaleLabel: {
+        display: true,
+        labelString: 'Number of Clicks', 
+        fontColor: 'black'
+      }
+    }],
+    xAxes: [{
+        ticks: {
+          fontColor: 'black'
+        }
+      }]
+  }
 }
 })
 }

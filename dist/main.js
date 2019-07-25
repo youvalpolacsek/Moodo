@@ -42,6 +42,11 @@ $(document).ready(function(){
   $('#statModal').modal();
 });
 
+  $(".aboutButton").on("click",function(){
+  $('#about').modal();
+})
+
+
 $('#savedMoods').on("click", userDataTransfer)
 
 $(document).ready(function(){
@@ -62,6 +67,7 @@ $("#submit-button").on("click", function(){
    myModal.style.display = "none";
   }
 })
+
 
 $(".mood-set").on("click", ".save", function(){
   let container = $(this).closest(".buttons")
