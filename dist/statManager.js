@@ -79,7 +79,7 @@ class StatManager {
     this.moodCounter(tempObj.evening, moodsByTime.evening)
     this.moodCounter(tempObj.morning, moodsByTime.morning)
 
-    this.timeInDayMoods = moodsByTime
+    return this.timeInDayMoods = moodsByTime
   }
   
   submitUsername = (name) => this.username = name

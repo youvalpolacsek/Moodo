@@ -81,7 +81,9 @@ $(".collapsible").on("click", ".delete", async function(){
 
 $(".statButton").on("click" , async function(){
   let moodData = await statManager.getStatFromDB()
-  renderer.renderStats(moodData)
+  let byTimeData = await statManager.getStatsByTime()
+  console.log(byTimeData)
+  renderer.renderStats(moodData,byTimeData)
 })
 
 
