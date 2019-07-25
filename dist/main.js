@@ -3,6 +3,7 @@ const statManager = new StatManager()
 const apiManager = new ApiManager()
 
 const moodSetGetter = async function(){
+  $('.mood-set').empty()
   let currentID = this._openingTrigger.id
 //   let moodSet = {
 //     "name": "happy",
@@ -80,7 +81,9 @@ $(".collapsible").on("click", ".delete", async function(){
 
 $(".statButton").on("click" , async function(){
   let moodData = await statManager.getStatFromDB()
-  renderer.renderStats(moodData)
+  let byTimeData = await statManager.getStatsByTime()
+  console.log(byTimeData)
+  renderer.renderStats(moodData,byTimeData)
 })
 
 
