@@ -45,6 +45,11 @@ class Renderer {
  }
 })
 }
+
+renderWeekStats(moodsData){
+    
+}
+
 }
 
 
