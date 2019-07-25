@@ -21,7 +21,7 @@ class Renderer {
         this.renderHandlebar(`#savedCurious-template`, res, ".curiousBody")
     }
     
-    renderStats = function (moodsData){
+    renderStats = function (moodsData, byTimeData){
     $("#monthChart").remove(); 
     $('.monthBody').append('<canvas id="monthChart" width="400" height="250"></canvas>');
    let ctx = $("#monthChart")
@@ -52,28 +52,43 @@ var myDoughnutChart = new Chart(ctx2, {
 type: 'bar',
 data: {
    labels: ["Morning","Noon","Evening"],
-   datasets: [{
-       label: 'My First dataset',
-       backgroundColor: [
-                          'rgb(255, 99, 132)',
-                          'rgba(255, 99, 1)',
-                          'rgba(54, 162, 235)',
-                          'rgba(255, 206, 86)'
-       ],
-       data: [{}]
-   }]
+   datasets: [
+    {
+      label: "Happy",
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: "black",
+      borderWidth: 1,
+      data: [byTimeData.morning.happy, byTimeData.noon.happy , byTimeData.evening.happy]
+    },
+    {
+      label: "Sad",
+      backgroundColor: 'rgba(255, 99, 1)',
+      borderColor: "black",
+      borderWidth: 1,
+      data: [byTimeData.morning.sad, byTimeData.noon.sad, byTimeData.evening.sad]
+    },
+    {
+      label: "InLove",
+      backgroundColor: 'rgba(54, 162, 235)',
+      borderColor: "black",
+      borderWidth: 1,
+      data: [byTimeData.morning.inLove, byTimeData.noon.inLove, byTimeData.evening.inLove]
+    },
+    {
+      label: "Curious",
+      backgroundColor: 'rgba(255, 206, 86)',
+      borderColor: "black",
+      borderWidth: 1,
+      data: [byTimeData.morning.curious, byTimeData.noon.curious, byTimeData.evening.curious]
+    }
+  ]
 },
 options: {
  responsive: false
 }
 })
 }
-
 }
-
-
-
-
 
 
 $(document).ready(function () {
