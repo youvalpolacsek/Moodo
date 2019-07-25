@@ -42,6 +42,11 @@ $(document).ready(function(){
   $('#statModal').modal();
 });
 
+  $(".aboutButton").on("click",function(){
+  $('#about').modal();
+})
+
+
 $('#savedMoods').on("click", userDataTransfer)
 
 $(document).ready(function(){
