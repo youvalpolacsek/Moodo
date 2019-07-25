@@ -132,6 +132,11 @@ options: {
 }
 })
 }
+
+renderWeekStats(moodsData){
+    
+}
+
 }
 
 
