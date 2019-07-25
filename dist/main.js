@@ -5,13 +5,6 @@ const apiManager = new ApiManager()
 const moodSetGetter = async function(){
   $('.mood-set').empty()
   let currentID = this._openingTrigger.id
-//   let moodSet = {
-//     "name": "happy",
-//     "gifUrl": "https://giphy.com/embed/3in5HNB71gZvq",
-//     "youtubeUrl": "h9nE2spOw_o",
-//     "quote": "True happiness is not attained through self-gratification, but through fidelity to a worthy purpose. Helen Keller"
-// }
-
   let moodSet = await apiManager.getMoodSet(currentID)
   renderer.renderMood(moodSet)
 
@@ -78,8 +71,9 @@ $(".mood-set").on("click", ".save", function(){
 $(".collapsible").on("click", ".delete", async function(){
   let itBe = $(this).closest(".savedMood")
   let date = itBe.find(".date").text()
-  let moodName = itBe.find(".mood-name").text()
-  let moodToDel = {mood: moodName, date: date}
+  let moodName = itBe.closest(".collapsible-body").siblings(".collapsible-header").text()
+  let moodNameLowerCase = moodName[0].toLowerCase() + moodName.slice(1)
+  let moodToDel = {mood: moodNameLowerCase, date: date}
   await apiManager.deleteSet(moodToDel)
   userDataTransfer()
 })
@@ -88,7 +82,6 @@ $(".collapsible").on("click", ".delete", async function(){
 $(".statButton").on("click" , async function(){
   let moodData = await statManager.getStatFromDB()
   let byTimeData = await statManager.getStatsByTime()
-  console.log(byTimeData)
   renderer.renderStats(moodData,byTimeData)
 })
 
